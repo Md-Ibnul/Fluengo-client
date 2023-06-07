@@ -2,8 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Lottie from "react-lottie";
 import signUpImage from "../../assets/signUpImage.json";
+import useAuth from "../../hooks/useAuth";
+import { saveUser } from "../../api/auth";
+import { toast } from "react-hot-toast";
+import SocialLogin from "../../Shared/SocialLogin";
 
 const SignUp = () => {
+  const {createUser, updateUserProfile} = useAuth();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -19,7 +24,28 @@ const SignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    createUser(data.email, data.password)
+    .then(result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(data.name, data.photoURL)
+      .then(() => {
+        saveUser(loggedUser);
+        toast.success("successfully login")
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error(error.message)
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      toast.error(error.message)
+    })
+  };
+
 
   return (
     <div>
@@ -157,6 +183,9 @@ const SignUp = () => {
                   />
                 </div>
               </form>
+              <div>
+                <SocialLogin />
+              </div>
             </div>
           </div>
         </div>
