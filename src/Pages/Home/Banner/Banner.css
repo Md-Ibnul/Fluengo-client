@@ -1,0 +1,39 @@
+.swiper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6) 80%;
+    z-index: 9;
+  }
+  .banner-text{
+    position: relative;
+    text-align: start;
+    top: 30%;
+    left:100px ;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
