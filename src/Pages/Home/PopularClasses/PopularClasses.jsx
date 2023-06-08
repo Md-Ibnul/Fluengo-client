@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const PopularClasses = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('./courses.json')
+        fetch('http://localhost:5000/classes')
         .then(res => res.json())
         .then(data => {
             console.log(data);

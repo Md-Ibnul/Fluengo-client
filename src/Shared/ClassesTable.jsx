@@ -55,7 +55,6 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.modifiedCount) {
             fetchClasses();
             Swal.fire(

@@ -5,13 +5,16 @@ import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
 import useAuth from '../../hooks/useAuth'
 import Logo from '../../Shared/Logo'
+import useAdmin from '../../hooks/useAdmin'
+import useInstructor from '../../hooks/useInstructor'
 
 const Sidebar = () => {
-  const navigate = useNavigate()
-  const { user, logOut,} = useAuth()
-
-  const [isActive, setActive] = useState('false')
-  const [toggle, setToggle] = useState(false)
+  const navigate = useNavigate();
+  const { user, logOut,} = useAuth();
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
+  const [isActive, setActive] = useState('false');
+  const [toggle, setToggle] = useState(false);
   const toggleHandler = event => {
     setToggle(event.target.checked)
   }
