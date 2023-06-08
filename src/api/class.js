@@ -1,6 +1,6 @@
-// Add a room
+// Add a class
 export const addClass = async classData => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/classes`, {
+    const response = await fetch('http://localhost:5000//classes', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
