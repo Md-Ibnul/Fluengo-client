@@ -77,8 +77,9 @@ const Sidebar = () => {
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
             <nav>
-                <ul>
-                    <Link to='/'>Home</Link>
+                <ul className='ms-5'>
+                    <li className='my-2'><NavLink to='/'>Home</NavLink></li>
+                    <li className='my-2'><NavLink to='/dashboard/manageUsers'>Manage Users</NavLink></li>
                 </ul>
             </nav>
           </div>

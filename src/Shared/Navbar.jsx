@@ -6,11 +6,67 @@ import userPhoto from '../assets/placeholder.jpg'
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-
+  
   const handleLogOut = () => {
     logOut()
     .then(() => {})
   }
+const navOption = (
+  <>
+  <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 border-b-2 bg" : "default"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/classes"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 border-b-2" : "default"
+              }
+            >
+              Classes
+            </NavLink>
+          </li>
+          <li>
+            {
+              <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 border-b-2" : "default"
+              }
+            >
+              Dashboard
+            </NavLink>
+            }
+          </li>
+          <li>
+            {
+              user ? 
+              <a onClick={handleLogOut}
+              
+            >
+              Log Out
+            </a> :
+            <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive ? "text-red-600 border-b-2" : "default"
+            }
+          >
+            Login
+          </NavLink>
+            }
+          </li>
+  </>
+)
+
+
   return (
     <div className="navbar bg-base-100 border-b-2 drop-shadow-lg relative z-50 pe-5">
       <div className="navbar-start">
@@ -49,54 +105,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 me-2 text-lg font-medium">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "text-red-600 border-b-2 bg" : "default"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/classes"
-              className={({ isActive }) =>
-                isActive ? "text-red-600 border-b-2" : "default"
-              }
-            >
-              Classes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/dashboard"
-              className={({ isActive }) =>
-                isActive ? "text-red-600 border-b-2" : "default"
-              }
-            >
-              Dashboard
-            </NavLink>
-          </li>
-          <li>
-            {
-              user ? 
-              <a onClick={handleLogOut}
-              
-            >
-              Log Out
-            </a> :
-            <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive ? "text-red-600 border-b-2" : "default"
-            }
-          >
-            Login
-          </NavLink>
-            }
-          </li>
+          {navOption}
         </ul>
       </div>
       <div className="navbar-end">
