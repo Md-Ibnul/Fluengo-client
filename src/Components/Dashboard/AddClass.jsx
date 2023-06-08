@@ -19,7 +19,6 @@ const AddClass = () => {
   } = useForm();
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
   const onSubmit = (data, e) => {
-    console.log(data);
 
     const formData = new FormData();
     formData.append("image", data.image[0]);
@@ -30,7 +29,6 @@ const AddClass = () => {
       })
         .then((res) => res.json())
         .then((imgData) =>{
-            console.log(imgData);
             if (imgData.success) {
                 const imgURL = imgData.data.display_url;
                 const { className, price, availableSeat, description, instructorName, instructorEmail } = data;
@@ -42,12 +40,13 @@ const AddClass = () => {
                   image: imgURL,
                   instructorName,
                   instructorEmail,
+                  status: "Pending"
                 };
       
                 addClass(newInfo)
                 .then((data) => {
-                  if (data.data.insertedId) {
-                    toast.success("Successfully Added!");
+                  if (data.insertedId) {
+                    toast.success("Your Class is in pending!");
                     reset();
                   }
                 });

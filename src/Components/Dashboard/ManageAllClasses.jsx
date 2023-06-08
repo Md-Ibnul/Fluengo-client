@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { getAllUsers } from '../../api/auth';
-import UserTable from '../../Shared/UserTable';
+import { getAllClasses } from '../../api/class';
+import ClassesTable from '../../Shared/ClassesTable';
 
-const ManageUsers = () => {
+const ManageAllClasses = () => {
     const {user} = useAuth();
-    const [allUsers, setAllUsers] = useState([]);
-    const fetchUsers = () => {
-        getAllUsers()
+    const [allClasses, setAllClasses] = useState([]);
+    const fetchClasses = () => {
+        getAllClasses()
         .then(data => {
-            setAllUsers(data);
+            setAllClasses(data);
         })
     }
     useEffect(() => {
-       fetchUsers()
+       fetchClasses()
     }, [user])
     return (
         <div className='container mx-auto px-4 sm:px-8'>
@@ -39,19 +39,19 @@ const ManageUsers = () => {
                     scope='col'
                     className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
-                    Name
+                    Class's Name
                   </th>
                   <th
                     scope='col'
                     className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
-                    Email
+                    Instructor Name
                   </th>
                   <th
                     scope='col'
                     className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
-                    Role
+                    Status
                   </th>
                   <th
                     scope='col'
@@ -68,13 +68,13 @@ const ManageUsers = () => {
                 </tr>
               </thead>
               <tbody>
-                {allUsers &&
-                  allUsers.map((user, index) => (
-                    <UserTable
-                      key={user._id}
-                      user={user}
+                {allClasses &&
+                  allClasses.map((cls, index) => (
+                    <ClassesTable
+                      key={cls._id}
+                      cls={cls}
                       index={index}
-                      fetchUsers={fetchUsers}
+                      fetchClasses={fetchClasses}
                     />
                   ))}
               </tbody>
@@ -86,4 +86,4 @@ const ManageUsers = () => {
     );
 };
 
-export default ManageUsers;
+export default ManageAllClasses;
