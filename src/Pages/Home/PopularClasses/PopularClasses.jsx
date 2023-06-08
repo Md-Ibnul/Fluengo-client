@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Title from '../../../Shared/Title';
 import Card from '../../../Shared/Card';
+import { Link } from 'react-router-dom';
 
 const PopularClasses = () => {
     const [classes, setClasses] = useState([])
@@ -21,6 +22,7 @@ const PopularClasses = () => {
                 key={cls.id}
                 />)}
             </div>
+            <div className='text-center mt-10'><Link className='btn btn-outline btn-error hover:text-white'>See All</Link></div>
         </div>
     );
 };

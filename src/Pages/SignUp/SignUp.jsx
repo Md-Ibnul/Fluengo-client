@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import { saveUser } from "../../api/auth";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../Shared/SocialLogin";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {createUser, updateUserProfile} = useAuth();
@@ -22,6 +23,7 @@ const SignUp = () => {
     handleSubmit,
     getValues,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -34,6 +36,7 @@ const SignUp = () => {
       .then(() => {
         saveUser(loggedUser);
         toast.success("successfully login")
+        reset()
       })
       .catch(error => {
         console.log(error)
@@ -77,7 +80,7 @@ const SignUp = () => {
                     <span className="label-text">Photo URL</span>
                   </label>
                   <input
-                    type="text"
+                    type="url"
                     name="photoUrl"
                     {...register("photoURL", { required: true })}
                     placeholder="photo url"
@@ -182,6 +185,7 @@ const SignUp = () => {
                     value="Sign Up"
                   />
                 </div>
+                <p className="text-end">Already have an account? <Link to='/login' className="text-red-600">Login</Link></p>
               </form>
               <div>
                 <SocialLogin />
