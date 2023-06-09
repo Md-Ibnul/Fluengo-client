@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-100 my-20">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <Lottie options={defaultOptions} height={600} width={600} />
           </div>

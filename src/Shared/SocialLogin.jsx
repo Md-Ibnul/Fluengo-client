@@ -5,13 +5,13 @@ import { saveUser } from '../api/auth';
 import { toast } from 'react-hot-toast';
 
 const SocialLogin = () => {
-    const{signInWithGoogle} = useAuth();
+    const{signInWithGoogle, role} = useAuth();
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
         .then(result => {
-            console.log(result.user);
-            saveUser(result.user)
+            const loggedUser = result.user;
+            saveUser(loggedUser)
             toast.success("Login Successfully")
         })
         .catch(error => {

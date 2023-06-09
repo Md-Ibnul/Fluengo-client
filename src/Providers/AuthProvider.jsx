@@ -11,6 +11,7 @@ import {
 } from 'firebase/auth'
 import app from '../Firebase/firebase.config'
 import axios from 'axios'
+import { getRole } from '../api/auth'
 
 export const AuthContext = createContext(null)
 
@@ -19,7 +20,17 @@ const googleProvider = new GoogleAuthProvider()
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
+  const [role, setRole] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (user) {
+      getRole(user?.email)
+      .then(data => {
+        setRole(data);
+      })
+    }
+  }, [user])
 
   const createUser = (email, password) => {
     setLoading(true)
@@ -63,8 +74,8 @@ const AuthProvider = ({ children }) => {
       }
       else{
         localStorage.removeItem('access-token')
-        setLoading(false)
       }
+      setLoading(false)
     })
     return () => {
       return unsubscribe()
@@ -73,6 +84,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    role,
     loading,
     setLoading,
     createUser,

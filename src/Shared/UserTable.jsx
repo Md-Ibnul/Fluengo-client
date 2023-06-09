@@ -55,7 +55,7 @@ const UserTable = ({user, fetchUsers, index}) => {
             if(data.modifiedCount){
                 fetchUsers();
                 Swal.fire(
-                    'Admin!',
+                    'Instructor!',
                     `${user.name} is Instructor now!`,
                     'success'
                   )

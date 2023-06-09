@@ -7,15 +7,23 @@ import Dashboard from "../Layouts/Dashboard";
 import ManageUsers from "../Components/Dashboard/ManageUsers";
 import AddClass from "../Components/Dashboard/AddClass";
 import ManageAllClasses from "../Components/Dashboard/ManageAllClasses";
+import PrivateRoute from "./PrivateRoute";
+import AllClasses from "../Pages/AllClasses/AllClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/classes",
+        element: <AllClasses />,
       },
       {
         path: "/login",
@@ -29,7 +37,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: "/dashboard/manageUsers",

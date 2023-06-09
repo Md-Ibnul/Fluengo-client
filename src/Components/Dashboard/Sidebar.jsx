@@ -5,19 +5,16 @@ import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
 import useAuth from '../../hooks/useAuth'
 import Logo from '../../Shared/Logo'
-import useAdmin from '../../hooks/useAdmin'
-import useInstructor from '../../hooks/useInstructor'
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const { user, logOut,} = useAuth();
-  const [isAdmin] = useAdmin();
-  const [isInstructor] = useInstructor();
+  const { user, logOut, role} = useAuth();
   const [isActive, setActive] = useState('false');
   const [toggle, setToggle] = useState(false);
   const toggleHandler = event => {
     setToggle(event.target.checked)
   }
+  console.log(role);
   // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive)
@@ -79,12 +76,32 @@ const Sidebar = () => {
 
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
-            <nav>
+            {
+              role && role === 'Admin' ? (
+                <nav>
                 <ul className='ms-5'>
                     <li className='my-2'><NavLink to='/'>Home</NavLink></li>
                     <li className='my-2'><NavLink to='/dashboard/manageUsers'>Manage Users</NavLink></li>
+                    <li className='my-2'><NavLink to='/dashboard/manageClasses'>Manage Classes</NavLink></li>
                 </ul>
             </nav>
+              ) : role && role === 'Instructor' ? (
+                <nav>
+                <ul className='ms-5'>
+                    <li className='my-2'><NavLink to='/'>Home</NavLink></li>
+                    <li className='my-2'><NavLink to='/dashboard/addClass'>Add Class</NavLink></li>
+                </ul>
+            </nav>
+              ): 
+              (
+                <nav>
+                <ul className='ms-5'>
+                    <li className='my-2'><NavLink to='/'>Home</NavLink></li>
+                    <li className='my-2'><NavLink to='/'>My Classes</NavLink></li>
+                </ul>
+            </nav>
+              )
+            }
           </div>
         </div>
 
