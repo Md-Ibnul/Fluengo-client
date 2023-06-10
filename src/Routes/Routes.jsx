@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import InstructorClasses from "../Components/Dashboard/Instructor/InstructorClasses";
+import SelectedClasses from "../Components/Student/SelectedClasses";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/insClasses",
         element: <InstructorClasses />,
+      },
+      // student dashboard
+      {
+        path: "/dashboard/selectedClasses",
+        element: <SelectedClasses />,
       },
     ]
   },
