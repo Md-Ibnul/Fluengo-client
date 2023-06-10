@@ -90,6 +90,7 @@ const Sidebar = () => {
                 <ul className='ms-5'>
                     <li className='my-2'><NavLink to='/'>Home</NavLink></li>
                     <li className='my-2'><NavLink to='/dashboard/addClass'>Add Class</NavLink></li>
+                    <li className='my-2'><NavLink to='/dashboard/insClasses'>My Classes</NavLink></li>
                 </ul>
             </nav>
               ): 

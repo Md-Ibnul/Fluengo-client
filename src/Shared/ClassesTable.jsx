@@ -3,7 +3,6 @@ import { FcLock } from "react-icons/fc";
 import { ImCross } from "react-icons/im";
 import { GiCheckMark } from "react-icons/gi";
 import Swal from "sweetalert2";
-import FeedbackModal from "../Components/FeedbackModal";
 
 const ClassesTable = ({ cls, fetchClasses, index }) => {
   const handleApprove = (cls) => {
@@ -35,7 +34,7 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
     });
   };
 
-  const handleMakeInstructor = async (cls) => {
+  const handleDenied = async (cls) => {
     const { value: text } = await Swal.fire({
       input: "textarea",
       inputLabel: "Feedback",
@@ -133,7 +132,7 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <button
-          onClick={() => handleMakeInstructor(cls)}
+          onClick={() => handleDenied(cls)}
           disabled={cls.status == "Denied"}
           className="btn btn-xs bg-red-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >

@@ -1,7 +1,9 @@
 import { FaBookReader, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Card = ({ cls }) => {
+  const {role} = useAuth();
   return (
     <div className="col-span-1 cursor-pointer group">
       <div className="flex flex-col gap-2 w-full relative">
@@ -46,7 +48,7 @@ const Card = ({ cls }) => {
           <div className="font-semibold"><FaUsers className="inline" /> Students: {cls.student}</div>
           <div className="font-light"><FaBookReader className="inline"/> Available Seats: {cls.availableSeat}</div>
         </div>
-        <Link className="btn btn-error text-white hover:bg-slate-900"> Select Course </Link>
+        <button disabled={role === 'Admin' || role === 'Instructor'}  className="btn btn-error text-white hover:bg-slate-900"> Select Course </button>
       </div>
     </div>
   );

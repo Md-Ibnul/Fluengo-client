@@ -94,7 +94,7 @@ const UserTable = ({user, fetchUsers, index}) => {
         </td>
         <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
           <p className='text-gray-900 whitespace-no-wrap flex items-center'>
-            <FaUserGraduate className='me-1 text-md'/> {user?.role}
+            <FaUserGraduate className='me-1 text-md'/> {user?.role ? user?.role : "Student"}
           </p>
         </td>
         <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>

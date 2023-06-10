@@ -22,7 +22,7 @@ const PopularInstructor = () => {
                 key={instructor._id}
                 />)}
             </div>
-            <div className='text-center mt-14 w-1/2 mx-auto'>
+            <div className='text-center mt-14 w-4/5 md:w-1/2 mx-auto'>
                 <p>Get the most dedicated consultation for your life-changing course. Earn a certification for your effort and passion <Link to='/login' className='text-red-600 cursor-pointer'>Join Now.</Link></p>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const InstructorCard = ({ instructor }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-full md:w-96 bg-base-100 shadow-xl">
       <figure className="h-80 w-full overflow-hidden">
         <img 
         className="w-full overflow-hidden"
