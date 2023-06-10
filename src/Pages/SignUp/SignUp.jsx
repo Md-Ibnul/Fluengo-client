@@ -6,10 +6,11 @@ import useAuth from "../../hooks/useAuth";
 import { saveUser } from "../../api/auth";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../Shared/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {createUser, updateUserProfile} = useAuth();
+  const navigate = useNavigate();
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -35,8 +36,9 @@ const SignUp = () => {
       updateUserProfile(data.name, data.photoURL)
       .then(() => {
         saveUser(loggedUser);
-        toast.success("successfully login")
-        reset()
+        toast.success("successfully login");
+        reset();
+        navigate('/');
       })
       .catch(error => {
         console.log(error)

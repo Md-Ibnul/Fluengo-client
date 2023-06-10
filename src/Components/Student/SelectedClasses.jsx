@@ -89,7 +89,7 @@ const SelectedClasses = () => {
           </div>
         </div>
       </div> : 
-          <EmptyState message={"You did not select any class yet!"} address={'/'} label="Browse Classes"/>
+          <EmptyState message={"You did not select any class yet!"} address={'/'} label={"Browse Classes"}/>
         }
         </>
     );

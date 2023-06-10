@@ -5,10 +5,13 @@ import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Lottie from "react-lottie";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -27,7 +30,7 @@ const Login = () => {
     console.log(data);
     signIn(data.email, data.password)
     .then(result => {
-        console.log(result.user);
+        navigate(from, {replace: true});
         toast.success("Successfully Login")
         reset()
     })

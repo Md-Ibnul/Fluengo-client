@@ -6,7 +6,7 @@ const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
     const handleDelete = (id) => {
         deleteSelectClass(id)
         .then(data => {
-            if(deletedCount > 0){
+            if(data.deletedCount > 0){
                 fetchSelectClasses();
                 toast.success("Deleted Class Successfully")
             }
