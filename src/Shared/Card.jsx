@@ -14,7 +14,6 @@ const selectInfo = {student: {name: user?.displayName, email: user?.email, image
 instructor: {name: cls.instructorName, email: cls.instructorEmail, image: cls.insImage},
 className: cls.className,
 classImage: cls.image,
-price: cls.price,
 price: cls.price,}
 
   const handleSelectClass = () => {

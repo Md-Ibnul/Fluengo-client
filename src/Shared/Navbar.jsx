@@ -34,6 +34,16 @@ const navOption = (
             </NavLink>
           </li>
           <li>
+            <NavLink
+              to="/allInstructor"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 border-b-2" : "default"
+              }
+            >
+              Instructors
+            </NavLink>
+          </li>
+          <li>
             {
               <NavLink
               to="/dashboard"
