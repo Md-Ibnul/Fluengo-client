@@ -5,7 +5,7 @@ import useAuth from "../hooks/useAuth";
 import userPhoto from '../assets/placeholder.jpg'
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, role } = useAuth();
   
   const handleLogOut = () => {
     logOut()
@@ -43,18 +43,34 @@ const navOption = (
               Instructors
             </NavLink>
           </li>
-          <li>
-            {
-              <NavLink
-              to="/dashboard"
+          {
+            role && role === "Admin" ? 
+            <li> <NavLink
+              to="/dashboard/manageUsers"
               className={({ isActive }) =>
                 isActive ? "text-red-600 border-b-2" : "default"
               }
             >
               Dashboard
             </NavLink>
+            </li> : role === "Instructor" ? 
+            <li> <NavLink
+            to="/dashboard/insClasses"
+            className={({ isActive }) =>
+              isActive ? "text-red-600 border-b-2" : "default"
             }
-          </li>
+          >
+            Dashboard
+          </NavLink></li> :
+          <li> <NavLink
+          to="/dashboard/selectedClasses"
+          className={({ isActive }) =>
+            isActive ? "text-red-600 border-b-2" : "default"
+          }
+        >
+          Dashboard
+        </NavLink></li>
+          }
           <li>
             {
               user ? 
