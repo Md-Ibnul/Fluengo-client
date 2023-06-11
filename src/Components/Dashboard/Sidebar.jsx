@@ -91,6 +91,7 @@ const Sidebar = () => {
                     <li className='my-2'><NavLink to='/'>Home</NavLink></li>
                     <li className='my-2'><NavLink to='/dashboard/addClass'>Add Class</NavLink></li>
                     <li className='my-2'><NavLink to='/dashboard/insClasses'>My Classes</NavLink></li>
+                    <li className='my-2'><NavLink to='/dashboard/feedback'>Feedback</NavLink></li>
                 </ul>
             </nav>
               ): 

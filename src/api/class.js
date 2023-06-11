@@ -9,7 +9,7 @@ export const addClass = async classData => {
     })
   
     const data = await response.json()
-    return data
+    return data;
   }
 
   // Get all classes to admin

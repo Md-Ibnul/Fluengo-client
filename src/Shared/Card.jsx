@@ -84,7 +84,7 @@ price: cls.price,}
         </div>
         <div className="flex flex-row justify-between items-center mb-3">
           <div className="font-semibold">
-            <FaUsers className="inline" /> Students: {cls.student}
+            <FaUsers className="inline" /> Students: {cls.student ? cls.student : '0'}
           </div>
           <div className="font-light">
             <FaBookReader className="inline" /> Available Seats:{" "}

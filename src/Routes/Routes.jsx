@@ -13,6 +13,10 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import InstructorClasses from "../Components/Dashboard/Instructor/InstructorClasses";
 import SelectedClasses from "../Components/Student/SelectedClasses";
 import AllInstructor from "../Pages/AllInstructor/AllInstructor";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
+import Feedback from "../Components/Dashboard/Instructor/Feedback";
+import UpdateClass from "../Components/Dashboard/Instructor/UpdateClass";
 
 export const router = createBrowserRouter([
   {
@@ -49,20 +53,29 @@ export const router = createBrowserRouter([
       // Admin Dashboard
       {
         path: "/dashboard/manageUsers",
-        element: <ManageUsers />,
+        element: <AdminRoute><ManageUsers /></AdminRoute>,
       },
       {
         path: "/dashboard/manageClasses",
-        element: <ManageAllClasses />,
+        element: <AdminRoute><ManageAllClasses /></AdminRoute>,
       },
       // Instructor Dashboard
       {
         path: "/dashboard/addClass",
-        element: <AddClass />,
+        element: <InstructorRoute><AddClass /></InstructorRoute>,
       },
       {
         path: "/dashboard/insClasses",
-        element: <InstructorClasses />,
+        element: <InstructorRoute><InstructorClasses /></InstructorRoute>,
+      },
+      {
+        path: "/dashboard/feedback",
+        element: <InstructorRoute><Feedback/></InstructorRoute>,
+      },
+      {
+        path: "/dashboard/updateClass/:id",
+        element: <InstructorRoute><UpdateClass/></InstructorRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
       },
       // student dashboard
       {
