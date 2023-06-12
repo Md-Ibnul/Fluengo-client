@@ -33,86 +33,131 @@ const Banner = () => {
         <SwiperSlide>
           <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-                To have another <br /> language is to possess <br /> a second soul
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                To have another <br /> language is to possess <br /> a second
+                soul
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner2} alt="Image" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-              Every student matters, <br />
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                Every student matters, <br />
                 every moment counts
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-              Putting Children First.
-Preparing Children For
-Success In Life
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                Putting Children First. Preparing Children For Success In Life
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner3} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-                To have another <br /> language is to possess <br /> a second soul
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                To have another <br /> language is to possess <br /> a second
+                soul
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner4} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-                To have another <br /> language is to possess <br /> a second soul
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                To have another <br /> language is to possess <br /> a second
+                soul
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner5} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-                To have another <br /> language is to possess <br /> a second soul
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                To have another <br /> language is to possess <br /> a second
+                soul
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner6} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div className="overlay ">
+          <div className="overlay ">
             <div className="banner-text text-white w-3/5">
-              <h2 className=" text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
-                To have another <br /> language is to possess <br /> a second soul
+              <h2 className=" text-2xl md:text-4xl uppercase font-serif font-bold leading-snug tracking-wider">
+                To have another <br /> language is to possess <br /> a second
+                soul
               </h2>
-              <p className="mt-5">A language has a completely new set of intricate rules, systems and lexis. You develop key learning skills such as cognitive thinking and problem-solving.</p>
-              <Link className="btn btn-outline btn-error mt-5">Register Now</Link>
+              <p className="mt-5">
+                A language has a completely new set of intricate rules, systems
+                and lexis. You develop key learning skills such as cognitive
+                thinking and problem-solving.
+              </p>
+              <Link className="btn btn-outline btn-error mt-5">
+                Register Now
+              </Link>
             </div>
           </div>
           <img src={banner7} alt="" />

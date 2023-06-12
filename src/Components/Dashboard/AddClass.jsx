@@ -62,7 +62,7 @@ const AddClass = () => {
       <Title title="Add A Class" subtitle="Ready to go!"/>
       <div className="w-4/5 md:w-full mx-auto text-start mt-14">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex gap-5'>
+          <div className='flex-col md:flex gap-5'>
           <div className='w-full'>
             <label className="ms-2 font-bold text-lg">Class Name</label>
           <input
@@ -70,7 +70,7 @@ const AddClass = () => {
             {...register("className", { required: true })}
           /></div>
 
-          <div className='w-full'>
+          <div className='w-full mb-5 md:mb-0'>
           <label className="ms-2 font-bold text-lg">Class's Image</label>
           <input type='file'
              className="file-input w-full bg-transparent"
@@ -79,7 +79,7 @@ const AddClass = () => {
           </div>
 
           </div>
-          <div className='flex gap-5'>
+          <div className='flex-col md:flex gap-5'>
           <div className='w-full'>
           <label className="ms-2 font-bold text-lg">Instructor Name</label>
           <input
@@ -99,7 +99,7 @@ const AddClass = () => {
          </div>
           </div>
           
-          <div className='flex gap-5'>
+          <div className='flex-col md:flex gap-5'>
           <div className='w-full'>
           <label className="ms-2 font-bold text-lg">Price</label>
           <input
