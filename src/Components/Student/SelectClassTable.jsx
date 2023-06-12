@@ -45,7 +45,7 @@ const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <Link to={`/dashboard/payOnline/${cls._id}`} cls={cls}
+        <Link to={`/dashboard/payOnline/${cls._id}`}
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >
            <FaMoneyCheckAlt className='inline me-1 text-lg'/> Pay
