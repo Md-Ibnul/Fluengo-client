@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import { getSelectedClass } from '../../api/select';
 import EmptyState from '../../Shared/EmptyState';
 import SelectClassTable from './SelectClassTable';
+import Title from '../../Shared/Title';
 
 const SelectedClasses = () => {
     const [selectClasses, setSelectClass ] = useState([])
@@ -11,7 +12,6 @@ const SelectedClasses = () => {
     const fetchSelectClasses = () => {
         getSelectedClass(user?.email)
         .then(data => {
-            console.log(data);
             setSelectClass(data);
         })
     }
@@ -23,6 +23,7 @@ const SelectedClasses = () => {
         {
           selectClasses && Array.isArray(selectClasses) && selectClasses.length > 0 ? 
           <div className="container mx-auto px-4 sm:px-8">
+            <Title  title="Your Selected Class" subtitle="Buy Now"/>
         <div className="py-8">
           <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
