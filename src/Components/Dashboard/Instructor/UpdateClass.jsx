@@ -67,7 +67,7 @@ const UpdateClass = () => {
       <Title title="Update Your Class" subtitle="Give something extra!"/>
       <div className="w-4/5 md:w-full mx-auto text-start mt-14">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex-col md:flex md:gap-5'>
+          <div className='md:flex md:gap-5'>
           <div className='w-full'>
             <label className="ms-2 font-bold text-lg">Class Name</label>
           <input
@@ -85,7 +85,7 @@ const UpdateClass = () => {
           </div>
 
           </div>
-          <div className='flex-col md:flex gap-5'>
+          <div className='md:flex gap-5'>
           <div className='w-full'>
           <label className="ms-2 font-bold text-lg">Instructor Name</label>
           <input
@@ -105,7 +105,7 @@ const UpdateClass = () => {
          </div>
           </div>
           
-          <div className='flex-col md:flex gap-5'>
+          <div className='md:flex gap-5'>
           <div className='w-full'>
           <label className="ms-2 font-bold text-lg">Price</label>
           <input
