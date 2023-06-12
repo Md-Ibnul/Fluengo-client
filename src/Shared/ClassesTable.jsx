@@ -15,7 +15,7 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
       confirmButtonText: "Yes, make!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/admin/${cls._id}`, {
+        fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/admin/${cls._id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())
@@ -47,7 +47,7 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
 
     if (text) {
         const data = {text}
-      fetch(`http://localhost:5000/classes/admin/${cls._id}`, {
+      fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/admin/${cls._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -73,7 +73,7 @@ const ClassesTable = ({ cls, fetchClasses, index }) => {
     //         confirmButtonText: 'Yes, make!'
     //       }).then((result) => {
     //     if (result.isConfirmed) {
-    //         fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+    //         fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/instructor/${user._id}`, {
     //     method: 'PATCH',
     // })
     // .then(res => res.json())

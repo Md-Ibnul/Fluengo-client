@@ -1,6 +1,6 @@
 // Add Selected Classes
 export const addSelectClass = async selectClass => {
-    const response = await fetch('http://localhost:5000/classes/selected', {
+    const response = await fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/selected', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -13,7 +13,7 @@ export const addSelectClass = async selectClass => {
 
 // update class place
 export const updatePlace = async (email, place) => {
-    const response = await fetch(`http://localhost:5000/classes/selected/${email}`, {
+    const response = await fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/selected/${email}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'
@@ -26,14 +26,14 @@ export const updatePlace = async (email, place) => {
 
 // get all selected class for user by email
 export const getSelectedClass = async email => {
-    const response = await fetch(`http://localhost:5000/classes/selected?email=${email}`)
+    const response = await fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/selected?email=${email}`)
     const select = await response.json()
     return select;
 }
 
 // Delete a booking room
 export const deleteSelectClass = async id => {
-    const response = await fetch(`http://localhost:5000/classes/selected/${id}`, {
+    const response = await fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/selected/${id}`, {
         method: 'DELETE',
         headers: {
             'content-type': 'application/json'

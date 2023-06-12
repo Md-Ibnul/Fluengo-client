@@ -7,7 +7,7 @@ export const saveUser = user => {
         image: user.photoURL,
     }
 
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/${user?.email}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
@@ -20,14 +20,14 @@ export const saveUser = user => {
 
 // Get all users
 export const getAllUsers = async () => {
-    const response = await fetch('http://localhost:5000/users')
+    const response = await fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users')
     const data = await response.json()
     return data
   }
   
   // Get role
 export const getRole = async email => {
-    const response = await fetch(`http://localhost:5000/users/${email}`)
+    const response = await fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/${email}`)
     const user = await response.json()
     return user?.role
   }

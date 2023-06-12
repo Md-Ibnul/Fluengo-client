@@ -1,17 +1,23 @@
-import React from "react";
-import loginImage from '../../assets/loginImage.json'
+import React, { useState } from "react";
+import loginImage from "../../assets/loginImage.json";
 import SocialLogin from "../../Shared/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Lottie from "react-lottie";
 import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Title from "../../Shared/Title";
 
 const Login = () => {
   const { signIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const [isVisible, setVisible] = useState(false);
+  const toggle = () => {
+    setVisible(!isVisible);
+  };
+  const from = location.state?.from?.pathname || "/";
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -29,11 +35,11 @@ const Login = () => {
   const onSubmit = (data) => {
     console.log(data);
     signIn(data.email, data.password)
-    .then(result => {
-        navigate(from, {replace: true});
-        toast.success("Successfully Login")
-        reset()
-    })
+      .then((result) => {
+        navigate(from, { replace: true });
+        toast.success("Successfully Login");
+        reset();
+      })
       .catch((error) => {
         console.log(error);
         toast.error(error.message);
@@ -42,10 +48,11 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-100 my-20">
+      <Title title="Login Now"/>
+      <div className="hero min-h-screen bg-base-100">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center lg:text-left">
-            <Lottie options={defaultOptions} height={600} width={600} />
+          <div className="w-full lg:ml-auto h-full">
+            <Lottie options={defaultOptions}  />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
@@ -59,7 +66,7 @@ const Login = () => {
                     name="email"
                     {...register("email", { required: true })}
                     placeholder="email"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                   />
                   {errors.email && (
                     <span className="text-red-500">This field is required</span>
@@ -69,8 +76,9 @@ const Login = () => {
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
+                  <div className="relative">
                   <input
-                    type="password"
+                    type={!isVisible ? "password" : "text"}
                     name="password"
                     {...register("password", {
                       required: true,
@@ -79,8 +87,12 @@ const Login = () => {
                       pattern: /^(?=.*[!@#$&*])(?=(.*[A-Z]))/,
                     })}
                     placeholder="password"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                   />
+                    <span className="absolute right-2 top-4 cursor-pointer" onClick={toggle}>
+                    {isVisible ? <FaEye /> : <FaEyeSlash />}
+                  </span>
+                  </div>
                   {errors.password && (
                     <span className="text-red-500">Password required.</span>
                   )}
@@ -108,7 +120,12 @@ const Login = () => {
                     value="Login"
                   />
                 </div>
-                <p className="text-end">New at Fluengo? <Link to='/signUp' className="text-red-600">SIgn up</Link></p>
+                <p className="text-end">
+                  New at Fluengo?{" "}
+                  <Link to="/signUp" className="text-red-600">
+                    SIgn up
+                  </Link>
+                </p>
               </form>
               <div>
                 <SocialLogin />

@@ -5,7 +5,7 @@ import Title from '../../Shared/Title';
 const AllInstructor = () => {
     const [instructors, setAllInstructors] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users/instructors/all')
+        fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/instructors/all')
         .then(res => res.json())
         .then(data => {
             setAllInstructors(data);

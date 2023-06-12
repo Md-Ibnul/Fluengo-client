@@ -8,7 +8,7 @@ const InstructorClasses = () => {
   const { user } = useAuth();
   const [allClasses, setAllClasses] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/classes/instructor/${user?.email}`)
+    fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/instructor/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAllClasses(data);

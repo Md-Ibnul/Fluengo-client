@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const PopularClasses = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes/approved/fixed')
+        fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/approved/fixed')
         .then(res => res.json())
         .then(data => {
             setClasses(data);

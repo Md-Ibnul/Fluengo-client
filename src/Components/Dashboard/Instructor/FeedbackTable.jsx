@@ -36,8 +36,7 @@ const FeedbackTable = ({feedback, index}) => {
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <Link to={`/dashboard/updateClass/${feedback._id}`}
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
-        >
-          <GrUpdate className='inline me-1 text-md'/> Update
+        >Update
         </Link>
       </td>
     </tr>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const PopularInstructor = () => {
     const [instructors, setInstructors] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/users/instructors/fixed')
+        fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/instructors/fixed')
         .then(res => res.json())
         .then(data => {
             setInstructors(data);

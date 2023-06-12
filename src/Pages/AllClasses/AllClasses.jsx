@@ -6,7 +6,7 @@ const AllClasses = () => {
 
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes/approved/all')
+        fetch('https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/approved/all')
         .then(res => res.json())
         .then(data => {
             console.log(data);

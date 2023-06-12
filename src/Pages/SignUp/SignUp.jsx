@@ -7,6 +7,7 @@ import { saveUser } from "../../api/auth";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../Shared/SocialLogin";
 import { Link, useNavigate } from "react-router-dom";
+import Title from "../../Shared/Title";
 
 const SignUp = () => {
   const {createUser, updateUserProfile} = useAuth();
@@ -54,10 +55,11 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-100 my-20">
+      <Title title="SignUp"/>
+      <div className="hero min-h-screen bg-base-100 mb-10">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <Lottie options={defaultOptions} height={600} width={600} />
+          <div className="w-full lg:ml-auto h-full">
+            <Lottie options={defaultOptions}/>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">

@@ -3,13 +3,14 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import Title from '../../../Shared/Title';
 import './updateClass.css'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 const img_hosting_token = import.meta.env.VITE_Image_Host_Key;
 
 const UpdateClass = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const classes = useLoaderData();
     const {_id, className, price, availableSeat, description} = classes || {};
   const {
@@ -42,7 +43,7 @@ const UpdateClass = () => {
                   image: imgURL,
                   status: "Pending"
                 };
-                fetch(`http://localhost:5000/classes/update/${_id}`, {
+                fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/update/${_id}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(newInfo),
@@ -52,6 +53,7 @@ const UpdateClass = () => {
                       if (data.modifiedCount > 0) {
                         toast.success("Successfully Updated")
                         reset();
+                        navigate('/dashboard/insClasses');
                       }
                     });
               }

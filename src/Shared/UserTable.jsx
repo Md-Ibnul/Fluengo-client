@@ -15,7 +15,7 @@ const UserTable = ({user, fetchUsers, index}) => {
             confirmButtonText: 'Yes, make!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/admin/${user._id}`, {
+                fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH',
         })
         .then(res => res.json())
@@ -46,7 +46,7 @@ const UserTable = ({user, fetchUsers, index}) => {
             confirmButtonText: 'Yes, make!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+                fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH',
         })
         .then(res => res.json())

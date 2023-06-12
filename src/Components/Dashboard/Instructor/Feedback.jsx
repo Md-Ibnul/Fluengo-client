@@ -9,7 +9,7 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   console.log(feedbacks);
   useEffect(() => {
-    fetch(`http://localhost:5000/classes/denied/${user?.email}`)
+    fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/denied/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data);

@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/updateClass/:id",
         element: <InstructorRoute><UpdateClass/></InstructorRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/classes/oneClass/${params.id}`)
+        loader: ({params}) => fetch(`https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app/classes/oneClass/${params.id}`)
       },
       // student dashboard
       {
