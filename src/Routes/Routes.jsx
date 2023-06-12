@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/payOnline/:id",
         element: <PayOnline />,
-        loader: ({params}) => fetch(`http://localhost:5000/classes/selected/pay/${params.id}`)
+        loader: ({params}) => fetch(`https://fluengo-server.vercel.app/classes/selected/pay/${params.id}`)
       },
       {
         path: "/dashboard/enrollClasses",

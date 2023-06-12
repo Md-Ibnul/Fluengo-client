@@ -22,7 +22,7 @@ export const getAllClasses = async () => {
 // Get enroll classes
 
 export const getEnrollClasses = async email => {
-  const response = await fetch(`http://localhost:5000/payments/${email}`)
+  const response = await fetch(`https://fluengo-server.vercel.app/payments/${email}`)
   const enroll = await response.json()
     return enroll;
 }
