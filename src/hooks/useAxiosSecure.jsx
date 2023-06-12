@@ -4,7 +4,7 @@ import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://fluengo-server-oq1dkczx0-md-ibnul.vercel.app'
+    baseURL: 'http://localhost:5000'
 })
 
 export const useAxiosSecure = () =>{

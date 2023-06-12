@@ -17,6 +17,8 @@ import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import Feedback from "../Components/Dashboard/Instructor/Feedback";
 import UpdateClass from "../Components/Dashboard/Instructor/UpdateClass";
+import PayOnline from "../Components/Student/PayOnline";
+import EnrollClasses from "../Components/Student/EnrollClasses";
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +83,15 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/selectedClasses",
         element: <SelectedClasses />,
+      },
+      {
+        path: "/dashboard/payOnline/:id",
+        element: <PayOnline />,
+        loader: ({params}) => fetch(`http://localhost:5000/classes/selected/pay/${params.id}`)
+      },
+      {
+        path: "/dashboard/enrollClasses",
+        element: <EnrollClasses />,
       },
     ]
   },

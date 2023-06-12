@@ -3,6 +3,7 @@ import { deleteSelectClass } from '../../api/select';
 import { toast } from 'react-hot-toast';
 import { FaMoneyCheckAlt, FaUserTie } from 'react-icons/fa';
 import { GiCrossMark } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
     const handleDelete = (id) => {
@@ -44,11 +45,11 @@ const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <button
+        <Link to={`/dashboard/payOnline/${cls._id}`} cls={cls}
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >
            <FaMoneyCheckAlt className='inline me-1 text-lg'/> Pay
-        </button>
+        </Link>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <button
