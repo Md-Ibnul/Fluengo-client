@@ -9,7 +9,6 @@ const PopularInstructor = () => {
         fetch('http://localhost:5000/users/instructors/fixed')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setInstructors(data);
         })
     }, [])

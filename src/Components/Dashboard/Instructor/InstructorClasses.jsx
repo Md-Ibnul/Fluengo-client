@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import Title from "../../../Shared/Title";
 import InstructorTable from "./InstructorTable";
+import EmptyState from "../../../Shared/EmptyState";
 
 const InstructorClasses = () => {
   const { user } = useAuth();
@@ -14,7 +15,8 @@ const InstructorClasses = () => {
       });
   }, [user]);
   return (
-    <div className="max-h-screen">
+    <> { allClasses && Array.isArray(allClasses) && allClasses.length > 0 ?
+      <div className="max-h-screen">
       <Title title="My Added Class" />
       <div className="container mx-auto px-4 sm:px-8">
         <div className="py-8">
@@ -82,7 +84,9 @@ const InstructorClasses = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>:
+    <EmptyState message={"You don't add class yet!"} address={'/dashboard/addClass'} label={"Add Class"}/>
+    }</>
   );
 };
 

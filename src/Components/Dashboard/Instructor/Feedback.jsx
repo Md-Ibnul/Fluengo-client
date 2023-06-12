@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import Title from '../../../Shared/Title';
 import FeedbackTable from './FeedbackTable';
+import EmptyState from '../../../Shared/EmptyState';
 
 const Feedback = () => {
     const { user } = useAuth();
   const [feedbacks, setFeedbacks] = useState([]);
+  console.log(feedbacks);
   useEffect(() => {
     fetch(`http://localhost:5000/classes/denied/${user?.email}`)
       .then((res) => res.json())
@@ -14,7 +16,8 @@ const Feedback = () => {
       });
   }, [user]);
     return (
-        <div className="max-h-screen">
+        <>{ feedbacks && Array.isArray(feedbacks) && feedbacks.length > 0 ?
+          <div className="max-h-screen">
       <Title title="Denied Class" subtitle="Update your class to approve"/>
       <div className="container mx-auto px-4 sm:px-8">
         <div className="py-8">
@@ -76,7 +79,9 @@ const Feedback = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> :
+    <EmptyState message={"You have no feedback yet!"} address={'/'} label={"Go Back To Home"}/>
+        }</>
     );
 };
 

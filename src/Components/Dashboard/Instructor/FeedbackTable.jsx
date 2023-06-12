@@ -1,4 +1,6 @@
 import React from 'react';
+import { GrUpdate } from 'react-icons/gr';
+import { BiSad } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const FeedbackTable = ({feedback, index}) => {
@@ -28,14 +30,14 @@ const FeedbackTable = ({feedback, index}) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap flex items-center">
-           {feedback?.status}
+        <BiSad className='inline me-1 text-md'/>  {feedback?.status}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <Link to={`/dashboard/updateClass/${feedback._id}`}
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >
-           Update
+          <GrUpdate className='inline me-1 text-md'/> Update
         </Link>
       </td>
     </tr>

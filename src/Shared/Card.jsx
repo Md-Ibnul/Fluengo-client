@@ -6,7 +6,6 @@ import { toast } from "react-hot-toast";
 import { useState } from "react";
 
 const Card = ({ cls }) => {
-  console.log(cls);
   const { user, role } = useAuth();
   const navigate = useNavigate();
 

@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
     <QueryClientProvider client={queryClient}>
-      <Toaster />
+      <Toaster position="top-right" reverseOrder={false}/>
       <RouterProvider router={router} />
     </QueryClientProvider>
   </AuthProvider>

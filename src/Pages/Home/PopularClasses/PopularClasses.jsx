@@ -9,7 +9,6 @@ const PopularClasses = () => {
         fetch('http://localhost:5000/classes/approved/fixed')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setClasses(data);
         })
     }, [])

@@ -1,6 +1,8 @@
 import React from 'react';
 import { deleteSelectClass } from '../../api/select';
 import { toast } from 'react-hot-toast';
+import { FaMoneyCheckAlt, FaUserTie } from 'react-icons/fa';
+import { GiCrossMark } from 'react-icons/gi';
 
 const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
     const handleDelete = (id) => {
@@ -38,14 +40,14 @@ const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 whitespace-no-wrap flex items-center">
-           {cls?.instructor.name}
+          <FaUserTie className='inline me-2 text-xl'/> {cls?.instructor.name}
         </p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <button
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >
-           Pay
+           <FaMoneyCheckAlt className='inline me-1 text-lg'/> Pay
         </button>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -53,7 +55,7 @@ const SelectClassTable = ({cls, index, fetchSelectClasses}) => {
         onClick={() => handleDelete(cls._id)}
           className="btn btn-xs bg-yellow-600 text-white hover:text-black whitespace-no-wrap flex items-center"
         >
-           Delete
+          <GiCrossMark className='inline me-1 text-lg'/> Delete
         </button>
       </td>
     </tr>

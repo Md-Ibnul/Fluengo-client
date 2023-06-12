@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/updateClass/:id",
         element: <InstructorRoute><UpdateClass/></InstructorRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/classes/oneClass/${params.id}`)
       },
       // student dashboard
       {

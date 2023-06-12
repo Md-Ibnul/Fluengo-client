@@ -58,7 +58,7 @@ const AddClass = () => {
   };
 
   return (
-    <div className="addBg text-center my-16 min-h-screen p-5">
+    <div className="addClassBg text-center my-16 min-h-screen p-5">
       <Title title="Add A Class" subtitle="Ready to go!"/>
       <div className="w-4/5 md:w-full mx-auto text-start mt-14">
         <form onSubmit={handleSubmit(onSubmit)}>
