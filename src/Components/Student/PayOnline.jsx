@@ -12,7 +12,7 @@ const PayOnline = () => {
     return (
         <div className='min-h-screen'>
             <Title title="Payment Here"/>
-            <div>
+            <div className='mx-auto text-xl font-bold'>
                 Price: {cls.price}
                 <Elements stripe={stripePromise}>
                     <CheckoutForm cls={cls}/>
