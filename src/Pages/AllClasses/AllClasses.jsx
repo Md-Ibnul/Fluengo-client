@@ -15,7 +15,7 @@ const AllClasses = () => {
     }, [])
    
     return (
-        <div className='mb-10 mt-4'>
+        <div className='mb-10 pt-8'>
             <Title title='All classes' subtitle='All Excellent Classes Of Us'/>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
                 {classes.map(cls =><Card 

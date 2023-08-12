@@ -4,6 +4,7 @@ import PopularClasses from './PopularClasses/PopularClasses';
 import PopularInstructor from './PopularInstructor/PopularInstructor';
 import AboutUs from './AboutUs/Aboutus';
 import CounterUpPage from './CountUp/CounterUpPage';
+import GetFromUs from './GetFromUS/GetFromUs';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <PopularClasses />
             <CounterUpPage />
             <PopularInstructor />
+            <GetFromUs />
         </div>
     );
 };

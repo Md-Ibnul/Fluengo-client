@@ -13,7 +13,7 @@ const AllInstructor = () => {
     }, [])
    
     return (
-        <div className='mb-10 mt-4'>
+        <div className='mb-10 pt-8'>
             <Title title='All Instructor' subtitle='All Excellent Instructor Of Us'/>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
                 {instructors.map(instructor =><InstructorCard

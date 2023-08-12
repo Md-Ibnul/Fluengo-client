@@ -4,6 +4,8 @@ import useAuth from "../hooks/useAuth";
 import { addSelectClass, updatePlace } from "../api/select";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const Card = ({ cls }) => {
   const { user, role } = useAuth();
@@ -30,9 +32,17 @@ price: cls.price,}
     })
     .catch(err => console.log(err));
   };
+  AOS.init();
   return (
-    <div className="col-span-1 cursor-pointer group">
+    <div className="col-span-1 cursor-pointer group" >
       <div className="flex flex-col gap-2 w-full relative">
+        <div  data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="500"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
         <div
           className="
             aspect-square 
@@ -40,6 +50,7 @@ price: cls.price,}
             h-80
             overflow-hidden
           "
+          
         >
           <img
             className="
@@ -57,7 +68,7 @@ price: cls.price,}
             absolute
             bottom-56
             right-5
-            z-50
+            z-20
           "
           >
             <p className="font-bold text-white text-xl bg-red-700 p-4 rounded-full shadow-md">
@@ -65,7 +76,7 @@ price: cls.price,}
             </p>
           </div>
         </div>
-        <div className="flex gap-6 items-center mt-5">
+        <div className="flex gap-6 ju items-center mt-5">
           <div className="w-10 h-10 rounded-full">
             <img
               className="w-full h-full rounded-full"
@@ -74,7 +85,7 @@ price: cls.price,}
               alt=""
             />
           </div>
-          <div className="font-medium text-neutral-500 mt-5">
+          <div className="font-medium text-xl text-neutral-500">
             {cls.instructorName}
           </div>
         </div>
@@ -97,6 +108,7 @@ price: cls.price,}
         >
           Select Course
         </button>
+        </div>
       </div>
     </div>
   );

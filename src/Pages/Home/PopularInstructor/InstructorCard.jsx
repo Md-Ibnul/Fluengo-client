@@ -1,9 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {FaFacebookF, FaInstagram, FaTwitter} from "react-icons/fa"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const InstructorCard = ({ instructor }) => {
+  AOS.init();
   return (
+    <div data-aos="fade-down"
+    data-aos-offset="0"
+    data-aos-duration="500"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
     <div className="card w-full md:w-96 bg-base-100 shadow-xl">
       <figure className="h-80 w-full overflow-hidden">
         <img 
@@ -28,6 +38,7 @@ const InstructorCard = ({ instructor }) => {
           <Link className="inline-flex bg-neutral-800 p-2 rounded-full hover:bg-red-600 transition"><FaInstagram className="text-2xl text-white"/> </Link>
         </div>
         <Link to='/classes' className='btn btn-error text-white hover:bg-slate-900 w-full'>See Classes</Link>
+    </div>
     </div>
   );
 };
